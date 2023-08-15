@@ -84,7 +84,6 @@ function SellingPrice({
   const hasUnitMultiplier = unitMultiplier !== 1
 
   const hasKg = measurementUnit && measurementUnit === 'kg'
-  // const shouldRenderSellingPriceValue = hasKg && hasListPrice
 
   const containerClasses = withModifiers('sellingPrice', [
     hasListPrice ? 'hasListPrice' : '',

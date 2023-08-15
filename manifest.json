@@ -1,7 +1,7 @@
 {
   "vendor": "obahortifruti",
   "name": "product-price",
-  "version": "1.31.0",
+  "version": "0.0.1",
   "title": "OBA Product Price",
   "description": "Components used to show everything price related in the context of the product",
   "builders": {
