@@ -83,6 +83,8 @@ function SellingPrice({
   const hasMeasurementUnit = measurementUnit && measurementUnit !== 'un'
   const hasUnitMultiplier = unitMultiplier !== 1
 
+  const hasKg = measurementUnit && measurementUnit === 'kg'
+
   const containerClasses = withModifiers('sellingPrice', [
     hasListPrice ? 'hasListPrice' : '',
     hasMeasurementUnit ? 'hasMeasurementUnit' : '',
@@ -97,11 +99,20 @@ function SellingPrice({
         markers={markers}
         handleBase="sellingPrice"
         values={{
-          sellingPriceValue: (
+          sellingPriceValue: hasListPrice ? (
             <span key="sellingPriceValue" className={handles.sellingPriceValue}>
-              <FormattedCurrency value={sellingPriceValue} />
+              Por: <FormattedCurrency value={sellingPriceValue} />
+              {hasKg && <span> / kg</span>}
             </span>
+          ) : hasKg ? (
+            <span key="sellingPriceValue" className={handles.sellingPriceValue}>
+              Por: <FormattedCurrency value={sellingPriceValue} />
+              <span> / kg</span>
+            </span>
+          ) : (
+            <></>
           ),
+
           sellingPriceWithTax: (
             <span
               key="sellingPriceWithTax"
