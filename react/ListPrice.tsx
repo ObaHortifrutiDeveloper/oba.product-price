@@ -100,7 +100,7 @@ function ListPrice({
               key="listPriceValue"
               className={`${handles.listPriceValue} strike`}
             >
-              <FormattedCurrency value={listPriceValue} />
+              De: <FormattedCurrency value={listPriceValue} />
             </span>
           ),
           listPriceWithTax: (
